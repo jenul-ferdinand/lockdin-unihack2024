@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- TITLE OF EVERY TAB -->
+    <title>LockdIn</title>
+</head>
+
+<body>
+    <div class="flex-container">
+        
+        <!-- LEFT SIDEBAR -->
+        <div class="flex-item" id="sidebar">
+            <h1>Testing</h1>
+            <button id="add-moodle-link-button">Add Moodle Link</button>
+        </div>
+
+        <!-- MIDDLE PANE -->
+        <div class="flex-item" id="pomodoro">
+			<!-- Top Title Card -->
+            <img id="titlecard" src="assets/page/title-card-dark.png">
+
+			<!-- Center Logo-->
+			<div class="logo-container">
+				<img id="logo" src="assets/page/logo-off.png">
+			</div>
+            
+			<!-- Pomodoro -->
+            <div id="timer">
+                <div id="time">25:00</div>
+                <span id="timer-buttons" class="flex-container">
+                    <button id="start-button" class="timer-button">Start</button>
+                    <button id="pause-button" class="timer-button">Pause</button>
+                    <button id="reset-button" class="timer-button">Reset</button>
+                </span>
+                <button data-modal-target="#modal" id="custom-button">Custom</button>
+            </div>
+
+            <div class="modal" id="modal">
+                <div class="modal-header">
+                    <div class="title">Enter Custom Timer</div>
+                    <button data-close-button class="close-button">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <b class="custom-modal-heading">Study</b>
+                    <input id="custom-modal-input-study" type="number">
+                    <b class="custom-modal-heading">Break</b>
+                    <input id="custom-modal-input-break" type="number">
+                </div>
+                <div class="modal-footer">
+                    <button data-close-button id="custom-save-button">Save</button>
+                </div>
+            </div>
+
+            <div id="overlay"></div>
+        </div>
+
+        <!-- ==== RIGHT SIDEBAR ==== -->
+        <div class="flex-item" id="right-container">
+            <!-- PAGES -->
+            <!-- To-do Page -->
+            <div class="page" id="page1">
+                  <h1>📜 Todo List</h1>
+                  <button type="submit" id="addTaskButton">Add Task</button>
+                  <ul class="todo-list">
+                    <!--Add new task <li> -->
+                  </ul>
+                  
+            </div>
+
+            <!-- Essential Links -->
+            <div class="page" id="page2"> 
+              <h1>🎓 Essential M-Links</h1>
+                <ul class="essential-links">
+                    <li><a href="https://my.monash/campusm/home#menu" target="_blank">Monash Home Page</a></li>
+                    <li><a href="https://www.monash.edu/students/admin/timetables/allocate/login" target="_blank">Allocate+</a></li>
+                    <li><a href="https://my.monash.edu/wes/" target="_blank">WES</a></li>
+                    <li><a href="https://eassessment.monash.edu/my/" target="_blank">eAssessment</a></li>
+                    <li><a href="https://my.monash.edu/news-and-events/bookings/?_ga=2.119902799.639275135.1536030452-584051056.1536030452" target="_blank">Monash Booking Systems</a></li>
+                    <li><a href="https://www.monash.edu/learning-teaching/TeachHQ/learning-technologies/move" target="_blank">MoVE</a></li>
+                    <li><a href="https://www.monash.edu/library" target="_blank">Monash library</a></li>
+                    <li><a href="https://connect.monash.edu/s/" target="_blank">ask.monash</a></li>
+                    <li><a href="https://www.monash.edu/esolutions" target="_blank">IT Support</a></li>
+                </ul>
+            </div>
+
+            <!-- Weather Page -->
+            <div class="page" id="page3">
+
+                <div class="weather-container">
+                    <h1>Monash Weather</h1>
+                    <div class="weather-data">
+                        <p id="location">Monash University, Clayton</p>
+                        <p id="temperature"></p>
+                        <p id="description"></p>
+                    </div>
+                    <img id = "icon" src = "">
+                </div>
+
+            </div>
+
+            <!-- Pagination Dots -->
+            <div class="pagination">
+                <span class="dot" onclick="moveToPage(1)"></span>
+                <span class="dot" onclick="moveToPage(2)"></span>
+                <span class="dot" onclick="moveToPage(3)"></span>
+            </div>
+
+            <!-- Page Arrows -->
+            <!-- Left Arrow -->
+            <img src="assets/page/rightbar/right-arrow.png" class="page-arrow" id="left-arrow" alt="Left Arrow" style="transform: rotate(180deg); -webkit-filter: invert(100%)">
+
+            <!-- Right Arrow -->
+            <img src="assets/page/rightbar/right-arrow.png" class="page-arrow" id="right-arrow" alt="Right Arrow" style="-webkit-filter: invert(100%)">
+        </div>
+    </div>
+
+    <!-- Stylesheets and Scripts -->
+    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="rightbar.css">
+    <script src="scripts/page.js"></script>
+    <script src="scripts/units.js"></script>
+    <script src="scripts/todo.js" type="module"></script>
+    <script src="scripts/rightbar.js"></script>
+    <script src="scripts/effects/confetti.js" type="module"></script>
+    <script src="scripts/getweather.js"></script>
+</body>
+</html>
+
